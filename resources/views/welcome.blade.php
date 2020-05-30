@@ -1,100 +1,154 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+    <section class="py-20 bg-gray-200">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none">
+                        <div>Code Katas with</div>
+                        <div class="text-indigo-600">PHPUnit</div>
+                    </div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
+                        Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+                    </p>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+
+    <section class="py-20">
+        <div class="container">
+            <div class="row justify-center">
+                <div class="col-lg-7">
+                    <div class="mb-10">
+                        <div class="text-center">
+                            <h3 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                                What are Coding Katas
+                            </h3>
+
+                            <p class="mt-6 max-w-3xl text-xl leading-7 text-gray-600 lg:mx-auto">
+                                Kata is a martial arts term from Japan that refers to a choreographed sequence of movements. The goal is to perfect and internalize these movements through repetition and memorization. Once mastered, these sequences serve as a reference guide that you can instantly reach for and adapt without thought.
+                            </p>
+
+                            <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-600 lg:mx-auto">
+                                Outside of martial arts, this word, kata, is used more generally to refer to any set of steps or patterns that is repeated until mastery. Think of it as a way to harness your form and routine.
+                            </p>
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <div>
+                                <div class="leading-tight mt-1">
+                                    <div class="font-bold">
+                                        <a href="https://twitter.com/jeffrey_way">Jeffrey Way</a>
+                                    </div>
+
+                                    <div class="text-sm text-gray-600">
+                                        Creator of <a href="https://laracasts.com/">Laracasts</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-200">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h3 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                            Coding Katas
+                        </h3>
+
+                        <p class="mt-6 max-w-md text-xl leading-7 text-gray-600 lg:mx-auto">
+                            Each kata is a description of a coding challenge with a working example included.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-10">
+                @foreach ($katas as $kata)
+                    <div class="col-lg-3 flex flex-col">
+                        <div class="mt-6 overflow-hidden rounded-lg shadow flex flex-col flex-1">
+                            <div class="px-4 py-5 sm:px-6 bg-white flex flex-col flex-1 justify-between">
+                                <div>
+                                    <h4 class="text-gray-800 text-lg font-bold">{{ $kata->title }}</h4>
+
+                                    <p class="mt-3 text-sm text-gray-600">
+                                        {!! getExcerpt($kata->contents, 100) !!}
+                                    </p>
+                                </div>
+
+                                <div class="mt-3">
+                                    <a class="text-sm" href="{{ route('challenges.show', ['kata' => $kata->slug]) }}">
+                                        Do challenge <span class="ml-1">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mx-auto lg:flex lg:items-center lg:justify-between">
+                        <div>
+                            <span class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:leading-8">
+                                Want to know more <br class="md:hidden"> about me?
+                            </span>
+
+                            <div class="mt-3 text-gray-600 text-xl font-normal max-w-md leading-tight">
+                                Send me an email or come visit my personal site to get to know me more.
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+                            <div class="inline-flex rounded-lg shadow">
+                                <a href="mailto:tjthavarshan@gmail.com?subject=Hi There!" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-lg text-white hover:text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    Get in touch
+                                </a>
+                            </div>
+
+                            <div class="ml-3 inline-flex rounded-lg shadow">
+                                <a href="https://thavarshan.com" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-lg text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    Learn more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-gray-200">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="flex items-center justify-center text-gray-500">
+                        <div>
+                            <div class="text-sm">
+                                Made with <span class="text-red-500">&hearts;</span> by
+                            </div>
+
+                            <div>
+                                <a href="https://thavarshan.com" class="font-semibold">Thavarshan</a> <span>😘</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+@endsection

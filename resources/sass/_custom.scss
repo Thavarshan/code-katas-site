@@ -1,0 +1,15 @@
+a {
+    @apply .text-indigo-500;
+    @apply .transition;
+    @apply .duration-150;
+    @apply .ease-in-out;
+
+    &:hover {
+        @apply .text-indigo-400;
+    }
+
+    &:focus {
+        @apply .text-indigo-400;
+    }
+}
+

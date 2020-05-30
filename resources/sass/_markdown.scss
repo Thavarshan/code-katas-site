@@ -1,0 +1,25 @@
+.markdown {
+    h2 {
+        @apply .text-2xl;
+        @apply .font-extrabold;
+        @apply .tracking-tight;
+        @apply .text-gray-700;
+        @apply .leading-8;
+        @apply .mb-4;
+    }
+
+    p {
+        @apply .text-gray-600;
+        @apply .leading-relaxed;
+        @apply .mb-6;
+    }
+
+    ol {
+        @apply .list-decimal;
+        @apply .pl-10;
+
+        li {
+
+        }
+    }
+}
