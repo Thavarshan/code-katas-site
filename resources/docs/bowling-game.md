@@ -2,6 +2,7 @@
 title: Bowling Game Kata
 lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/3
 source: https://github.com/Thavarshan/phpunit-code-katas
+disabled: true
 ---
 
 ## Definition

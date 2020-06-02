@@ -3648,8 +3648,8 @@ a.close.disabled {
 
 a {
   --text-opacity: 1;
-  color: #667eea;
-  color: rgba(102, 126, 234, var(--text-opacity));
+  color: #5a67d8;
+  color: rgba(90, 103, 216, var(--text-opacity));
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -3657,14 +3657,14 @@ a {
 
 a:hover {
   --text-opacity: 1;
-  color: #7f9cf5;
-  color: rgba(127, 156, 245, var(--text-opacity));
+  color: #667eea;
+  color: rgba(102, 126, 234, var(--text-opacity));
 }
 
 a:focus {
   --text-opacity: 1;
-  color: #7f9cf5;
-  color: rgba(127, 156, 245, var(--text-opacity));
+  color: #667eea;
+  color: rgba(102, 126, 234, var(--text-opacity));
 }
 
 .markdown h2 {
@@ -3689,6 +3689,23 @@ a:focus {
 .markdown ol {
   list-style-type: decimal;
   padding-left: 2.5rem;
+}
+
+.markdown ol li {
+  margin-bottom: 1rem;
+}
+
+.markdown ol li ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.markdown ol li ul li {
+  --text-opacity: 1;
+  color: #a0aec0;
+  color: rgba(160, 174, 192, var(--text-opacity));
+  font-size: 0.875rem;
+  margin-bottom: 0;
 }
 
 .space-y-0 > :not(template) ~ :not(template) {

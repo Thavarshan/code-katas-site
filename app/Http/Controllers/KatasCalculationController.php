@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Katas\PrimeFactors;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Traits\HasKata;
 
 class KatasCalculationController extends Controller
 {
+    use HasKata;
+
     /**
      * Calculate prime factor of given number.
      *
-     * @param  \Katas\PrimeFactors $generator
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function primeFactors(PrimeFactors $generator, Request $request)
+    public function __invoke(Request $request)
     {
-        return response([
-            'result' => $generator->generate($request->number),
-        ], 200);
+        $result = $this->makeKata($request->kata)->execute($request->arguments);
+
+        return response(['result' => $result], 200);
     }
 }

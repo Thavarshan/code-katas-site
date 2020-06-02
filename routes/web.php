@@ -16,8 +16,15 @@ Route::get('/', function (Document $documents) {
 Route::group([
     'prefix' => 'challenges',
 ], function (): void {
+    /*
+     * Kata Demo and Documentation...
+     */
     Route::get('/{kata}', 'KatasController')->name('challenges.show');
-    Route::post('/prime-factors', 'KatasCalculationController@primeFactors')->name('challenges.prime-factors.calculate');
+
+    /*
+     * Kata Demo Execution Route...
+     */
+    Route::post('/{kata}/execute', 'KatasCalculationController')->name('challenges.execute');
 });
 
 /*

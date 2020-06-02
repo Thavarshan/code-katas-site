@@ -2,7 +2,7 @@
 
 @section('document')
     <div>
-        <a href="{{ route('welcome') }}"><span>&larr;</span> Back</a>
+        <a href="/#katas"><span>&larr;</span> Back</a>
     </div>
 
     <h3 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
@@ -37,7 +37,7 @@
         </p>
     </div>
 
-    <hr class="my-10">
+    <hr class="my-6">
 
     <prime-factors></prime-factors>
 @endsection

@@ -4,15 +4,36 @@
     <section class="py-20 bg-gray-200">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none">
-                        <div>Code Katas with</div>
-                        <div class="text-indigo-600">PHPUnit</div>
-                    </div>
+                <div class="col-md-6 flex flex-col justify-center">
+                    <div>
+                        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none">
+                            Code Katas with <span class="text-indigo-600">PHPUnit</span>
+                        </h2>
 
-                    <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
-                        Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
-                    </p>
+                        <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
+                            Hi! I'm <span class="font-semibold">Thavarshan</span>. A software engineer at an esteemed company. I LOVE to code, so to practice my profession I started following the <a href="https://laracasts.com/series/code-katas-with-phpunit">Code Katas with PHPUnit</a> course by <a href="https://twitter.com/jeffrey_way">Jeffrey Way</a> at <a href="https://laracasts.com">Laracasts</a>. This site provides visual interfaces and documentation of all the coding challenges I've done so far.
+                        </p>
+
+                        <div class="mt-10">
+                            <div class="inline-flex rounded-lg shadow">
+                                <a href="#katas" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-lg text-white hover:text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    See challenges
+                                </a>
+                            </div>
+
+                            <div class="ml-3 inline-flex rounded-lg shadow">
+                                <a href="https://thavarshan.com" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-lg text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    Who am I?
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="flex flex-col items-center">
+                        <img src="{{ asset('img/programmer_group.png') }}" class="w-2/3 mx-auto" alt="{{ config('app.name') }}">
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,7 +66,7 @@
                                     </div>
 
                                     <div class="text-sm text-gray-600">
-                                        Creator of <a href="https://laracasts.com/">Laracasts</a>
+                                        Creator of <a href="https://laracasts.com">Laracasts</a>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +77,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-gray-200">
+    <section id="katas" class="py-20 bg-gray-200">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -74,25 +95,27 @@
 
             <div class="row mt-10">
                 @foreach ($katas as $kata)
-                    <div class="col-lg-3 flex flex-col">
-                        <div class="mt-6 overflow-hidden rounded-lg shadow flex flex-col flex-1">
-                            <div class="px-4 py-5 sm:px-6 bg-white flex flex-col flex-1 justify-between">
-                                <div>
-                                    <h4 class="text-gray-800 text-lg font-bold">{{ $kata->title }}</h4>
+                    @if (! $kata->disabled)
+                        <div class="col-lg-3 flex flex-col">
+                            <div class="mt-6 overflow-hidden rounded-lg shadow flex flex-col flex-1">
+                                <div class="px-4 py-5 sm:px-6 bg-white flex flex-col flex-1 justify-between">
+                                    <div>
+                                        <h4 class="text-gray-800 text-lg font-bold">{{ $kata->title }}</h4>
 
-                                    <p class="mt-3 text-sm text-gray-600">
-                                        {!! getExcerpt($kata->contents, 100) !!}
-                                    </p>
-                                </div>
+                                        <p class="mt-3 text-sm text-gray-600">
+                                            {!! getExcerpt($kata->contents, 100) !!}
+                                        </p>
+                                    </div>
 
-                                <div class="mt-3">
-                                    <a class="text-sm" href="{{ route('challenges.show', ['kata' => $kata->slug]) }}">
-                                        Do challenge <span class="ml-1">&rarr;</span>
-                                    </a>
+                                    <div class="mt-3">
+                                        <a class="text-sm font-semibold" href="{{ route('challenges.show', ['kata' => $kata->slug]) }}">
+                                            View challenge <span class="ml-1">&rarr;</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -142,7 +165,7 @@
                                 Made with <span class="text-red-500">&hearts;</span> by
                             </div>
 
-                            <div>
+                            <div class="text-sm">
                                 <a href="https://thavarshan.com" class="font-semibold">Thavarshan</a> <span>😘</span>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit.prevent="calculate()" method="POST">
+        <form @submit.prevent="calculate(number)" method="POST">
             <div>
                 <label class="block">
                     <span class="text-gray-700 block text-sm font-medium">Number</span>
@@ -29,27 +29,15 @@
 </template>
 
 <script>
+    import methods from '../mixins/methods';
+
     export default {
+        mixins: [methods],
+
         data() {
             return {
                 number: 0,
-                result: []
             }
         },
-
-        // mounted() {
-        //     console.log(location.pathname);
-        // },
-
-        methods: {
-            calculate() {
-                axios.post(location.pathname, {
-                        number: this.number
-                    })
-                    .then((response) => {
-                        this.result = response.data.result;
-                    });
-            }
-        }
-    }
+    };
 </script>
