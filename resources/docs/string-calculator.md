@@ -1,7 +1,7 @@
 ---
 title: String Calculator Kata
-lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/3
-source: https://github.com/Thavarshan/phpunit-code-katas
+lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/6
+source: https://github.com/Thavarshan/phpunit-code-katas/blob/master/src/Katas/StringCalculator.php
 ---
 
 ## Definition

@@ -1,7 +1,7 @@
 ---
 title: Tennis Game Kata
 lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/7
-source: https://github.com/Thavarshan/phpunit-code-katas
+source: https://github.com/Thavarshan/phpunit-code-katas/blob/master/src/Katas/Tennis/Game.php
 ---
 
 ## Definition

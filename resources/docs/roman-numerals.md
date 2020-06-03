@@ -1,7 +1,7 @@
 ---
 title: Roman Numerals Kata
 lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/3
-source: https://github.com/Thavarshan/phpunit-code-katas
+source: https://github.com/Thavarshan/phpunit-code-katas/blob/master/src/Katas/RomanNumerals.php
 ---
 
 ## Definition

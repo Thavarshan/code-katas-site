@@ -1,7 +1,7 @@
 ---
 title: Fizz Buzz Kata
 lesson: https://laracasts.com/series/code-katas-with-phpunit/episodes/8
-source: https://github.com/Thavarshan/phpunit-code-katas
+source: https://github.com/Thavarshan/phpunit-code-katas/blob/master/src/Katas/FizzBuzz.php
 ---
 
 ## Definition
