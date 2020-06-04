@@ -4,7 +4,7 @@
     <section class="py-10 md:py-16 lg:py-20 bg-gray-200">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 flex flex-col justify-center">
+                <div class="col-lg-6">
                     <div>
                         <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none">
                             Code Katas with <span class="text-indigo-600">PHPUnit</span>
