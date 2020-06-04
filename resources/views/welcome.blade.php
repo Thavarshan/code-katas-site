@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="py-20 bg-gray-200">
+    <section class="py-10 md:py-16 lg:py-20 bg-gray-200">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 flex flex-col justify-center">
+                <div class="col-lg-6 flex flex-col justify-center">
                     <div>
                         <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none">
                             Code Katas with <span class="text-indigo-600">PHPUnit</span>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-lg-6 hidden lg:block">
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('img/programmer_group.png') }}" class="w-2/3 mx-auto" alt="{{ config('app.name') }}">
                     </div>
@@ -58,9 +58,9 @@
                             </p>
                         </div>
 
-                        <div class="mt-6 flex justify-end">
+                        <div class="mt-6 flex justify-center md:justify-end">
                             <div>
-                                <div class="leading-tight mt-1">
+                                <div class="text-center md:text-left leading-tight mt-1">
                                     <div class="font-bold">
                                         <a href="https://twitter.com/jeffrey_way">Jeffrey Way</a>
                                     </div>
@@ -86,7 +86,7 @@
                             Coding Katas
                         </h3>
 
-                        <p class="mt-6 max-w-md text-xl leading-7 text-gray-600 lg:mx-auto">
+                        <p class="mt-6 w-full mx-auto md:max-w-md text-xl leading-7 text-gray-600 lg:mx-auto">
                             Each kata is a description of a coding challenge with a working example included.
                         </p>
                     </div>
@@ -96,7 +96,7 @@
             <div class="row mt-10">
                 @foreach ($katas as $kata)
                     @if (! $kata->disabled)
-                        <div class="col-lg-3 flex flex-col">
+                        <div class="col-lg-3 col-md-6 flex flex-col">
                             <div class="mt-6 overflow-hidden rounded-lg shadow flex flex-col flex-1">
                                 <div class="px-4 py-5 sm:px-6 bg-white flex flex-col flex-1 justify-between">
                                     <div>

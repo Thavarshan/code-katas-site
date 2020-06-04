@@ -10,6 +10,7 @@ use Katas\PrimeFactors;
 use Katas\RomanNumerals;
 use Katas\StringCalculator;
 use Katas\Contracts\Executable;
+use Katas\GildedRose\GildedRose;
 use App\Exceptions\KataNotFoundException;
 
 trait HasKata
@@ -26,6 +27,7 @@ trait HasKata
         'string-calculator' => StringCalculator::class,
         'tennis-game' => Game::class,
         'fizz-buzz' => FizzBuzz::class,
+        'gilded-rose' => GildedRose::class,
     ];
 
     /**

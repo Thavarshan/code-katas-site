@@ -16,6 +16,7 @@ Vue.component("roman-numerals", require("./components/RomanNumerals.vue").defaul
 Vue.component("string-calculator", require("./components/StringCalculator.vue").default);
 Vue.component("tennis-game", require("./components/TennisGame.vue").default);
 Vue.component("fizz-buzz", require("./components/FizzBuzz.vue").default);
+Vue.component("gilded-rose", require("./components/GildedRose.vue").default);
 
 const app = new Vue({
     el: '#app',

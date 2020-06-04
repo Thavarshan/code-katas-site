@@ -33,4 +33,24 @@
             }
         }
     }
+
+    ul {
+        @apply .list-disc;
+        @apply .pl-10;
+
+        li {
+            @apply .mb-4;
+
+            ul {
+                @apply .pl-4;
+                @apply .list-disc;
+
+                li {
+                    @apply .text-gray-500;
+                    @apply .text-sm;
+                    @apply .mb-0;
+                }
+            }
+        }
+    }
 }
